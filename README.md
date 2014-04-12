@@ -36,19 +36,28 @@
       - Smaller
       - Optimizes hit time to have shorter clock cycle 
     L2 (Secondary) Cache
-      - 
+      - Larger (access time less critical)
+      - Optimizes miss rate to reduce time penalty of cache miss
       
     Disk Access Time = Rotation Time + Seek Time
     
     
 4) Linkers, Loaders, Compilers
 
+    Loader
+        - Copies .exe into main memory for execution
+        - Initialize registers and set stack pointer
+        - Use symbol table to look up _start address, get ready for execution
+        
+    When the linker combines .o files, check for unresolved external references...    
     Static Linking
-      - as
-      - Used for:
-    Dynamic Linking  
-      - as
-      - Used for:
+      - Linked at runtime, library subroutines are part of .exe
+    Dynamic Linking 
+      - Unresolved references replaced to referebce of 'stub' routine 
+            - First time: copies missing function into main memory
+            - Missing function overwrites stub routine, next call directly to function   
+      - Linked as needed
+      - Executable is smaller
       
 5) Fetch, Decode, Execute      
     
