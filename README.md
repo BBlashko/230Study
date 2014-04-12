@@ -39,7 +39,9 @@
       - Larger (access time less critical)
       - Optimizes miss rate to reduce time penalty of cache miss
       
-    Disk Access Time = Rotation Time + Seek Time
+    # Disk Access Time = Rotation Time + Seek Time
+      Average access time from CPU =
+        hit rate * cache access time + (1 - hit rate) * miss penalty
     
     
 4) Linkers, Loaders, Compilers
