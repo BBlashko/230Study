@@ -74,9 +74,40 @@
 
 6) Pipelining 
 
-    Hitchhiked her way across the USA
-    Speedup = ???? ~m
-    
+	Increases performance by increasing instruction throughput 
+	N instructions, each take m cycles..
+	Without pipelining:
+		- Time = N*m
+	With pipelining:
+		- Time = m + N -1
+    Speedup = ~m (A new instruction is started every clock cycle)
+	Instruction Hazard:
+		- An instruction is not yet available
+	Data Hazard:
+		- required operand is not yet available (r3 being added, next instruction loads r3, which isn't ready yet)
+	Structural Hazard:
+		- when two resources need access to same hardware resource
+		
+7) Parallelism 
+
+	Flynn Taxonomy 
+		Single Instruction Single Data (SISD)
+			- Uniprocessor
+		Single Instruction Multiple Data (SIMD)
+			- Vector/Array processing 
+		Multiple Instruction Single Data (MISD) (useless?)
+		Multiple Instruction Multiple Data (MIMD)	
+   
+	Tight Coupling
+		- HEavy reliance on other systems
+	Loose Coupling 
+		- More independence
+
+	Amdhal's Law for speedup: (MAX SPEEDUP OF 20 ASSUMING 95% PARALELL INSTRCUTIONS) 
+		Speedup = 1 / (f + ((1-f)/P)) 
+			f = % of sequential instructions 
+			P = # of processors 
+   
 <br>
   ASSIGNMENTS
   

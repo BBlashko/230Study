@@ -1,5 +1,8 @@
 230Study
 ========
 
+FIGURE OUT TIMER IN ASSIGNMENT 3
+
+MUST BE ABLE TO DRAW FLYNN TAXONOMY (WHAT DOES THAT MEAN?)
 
 Files to keep track of studying for 230
