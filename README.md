@@ -5,7 +5,10 @@
 1) Performance (Clock Cycles etc...) 
 
     CPI = CPU clock cycles/Instruction Count
+	Clock rate = 1/ P (clock cycle)
     CPU time = (IC * CPI)/Clock rate
+	 or !!!
+	CPU time = (IC * CPI) * P(clock cycle time) 
     # What is speedup formula?!
     
 2) Virtual Memory 
