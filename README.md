@@ -3,17 +3,24 @@
 
 
 1) Performance (Clock Cycles etc...) 
-    
+
     CPI = CPU clock cycles/Instruction Count
     CPU time = (IC * CPI)/Clock rate
-    
-    
     # What is speedup formula?!
     
 2) Virtual Memory 
 
-    NEEDS WORK
-
+    Virtualizes all storage, makes it appear as one large memory device
+    Benefits: - Provides illusion of unbounded amount of memory
+              - Provides relocation, programs can be loaded into any location
+              
+    Only use RAM for "active" code and data, store everything else on disk
+        - Few programs need all their code and data at once
+    Physical memory holds a small number of virtual 'pages' in physical page 'frames'
+    Page table in memory or Memory Management Unit (MMU)
+    Each program has its own page table
+    ## Page valid in page tbl, entry+offset = physical page number in memory
+    SLIDES 26-30 ON VIRTUAL TO UNDERSTAND PAGE#OFFSET
 
 3) Memory
 
@@ -61,7 +68,14 @@
       - Linked as needed
       - Executable is smaller
       
-5) Fetch, Decode, Execute      
+5) Fetch, Decode, Execute  
+    SUNDAY!!!!!!!!
+    NEEDS WORK
+
+6) Pipelining 
+
+    Hitchhiked her way across the USA
+    Speedup = ???? ~m
     
 <br>
   ASSIGNMENTS
