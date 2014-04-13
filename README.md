@@ -9,7 +9,6 @@
     CPU time = (IC * CPI)/Clock rate
 	 or !!!
 	CPU time = (IC * CPI) * P(clock cycle time) 
-    # What is speedup formula?!
     
 2) Virtual Memory 
 
@@ -35,7 +34,7 @@
       - MORE DENSE
       - needs refreshing when powered (every 16-64 ns)
     
-3) Cache  ******
+3) Cache 
 
     Temporal Locality
       - When info accessed, high probability it will be accessed again
@@ -65,16 +64,29 @@
     Static Linking
       - Linked at runtime, library subroutines are part of .exe
     Dynamic Linking 
-      - Unresolved references replaced to referebce of 'stub' routine 
+      - Unresolved references replaced to reference of 'stub' routine 
             - First time: copies missing function into main memory
             - Missing function overwrites stub routine, next call directly to function   
       - Linked as needed
       - Executable is smaller
       
 5) Fetch, Decode, Execute  
-    SUNDAY!!!!!!!!
-    NEEDS WORK
-
+    WHOLE CYCLE IS...
+	FETCH STEP:
+		- Address in PC -> MAR
+		- MAR -> Address Bus
+		- Read Signal -> Control Bus
+		- Wait for memory (increment PC, using ALU) *UPDATE STEP*
+		- Content of location from memory -> Data Bus
+		- Data Bus -> MDR -> IR
+	DECODE STEP:
+		- Looks at opcode and operands in IR
+		- Decoder part of Control Unit of CPU
+	POSSIBLY MORE FETCHES FOR MORE OPERANDS
+	EXECUTE STEP:
+		- May involve ALU / Read and writes to memory
+	REPEAT!!!!	
+	
 6) Pipelining 
 
 	Increases performance by increasing instruction throughput 
@@ -90,6 +102,8 @@
 		- required operand is not yet available (r3 being added, next instruction loads r3, which isn't ready yet)
 	Structural Hazard:
 		- when two resources need access to same hardware resource
+	BIG PENALTY FOR INTERRUPTING PIPELINE (BRANCHING)
+		- Penalty = # of idle cycles caused by branch
 		
 7) Parallelism 
 
@@ -102,11 +116,11 @@
 		Multiple Instruction Multiple Data (MIMD)	
    
 	Tight Coupling
-		- HEavy reliance on other systems
+		- Heavy reliance on other systems
 	Loose Coupling 
 		- More independence
 
-	Amdhal's Law for speedup: (MAX SPEEDUP OF 20 ASSUMING 95% PARALELL INSTRCUTIONS) 
+	Amdahl's Law for speedup: (MAX SPEEDUP OF 20 ASSUMING 95% PARALELL INSTRCUTIONS) 
 		Speedup = 1 / (f + ((1-f)/P)) 
 			f = % of sequential instructions 
 			P = # of processors 
