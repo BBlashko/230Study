@@ -8,7 +8,12 @@
 	Clock rate = 1/ P (clock cycle)
     CPU time = (IC * CPI)/Clock rate
 	 or !!!
-	CPU time = (IC * CPI) * P(clock cycle time) 
+	CPU time = (IC * CPI) * P(clock cycle time)
+    Multicore
+    	- 2 CPUs, 1 cache, 1 MMU
+    Multiprocessor
+    	- 2 CPUS, 2 caches, 2 MMU
+	
     
 2) Virtual Memory 
 
