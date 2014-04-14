@@ -168,6 +168,28 @@
 			- Single bus between CPU and all other components
 			- Locations 'indexed' (ex. room 526 infers 5th floor)
 			
+10) Interrupts
+
+	Internal (to CPU)
+		- Software errors (ex. divison by 0)
+		- Called 'exceptions'
+	External (to CPU)
+		- (ex. a peripheral generates an event)
+		- Called an 'interrupt'
+	Interrupts are NOT scheduled
+	BASIC SAMPLE SEQUENCE..
+	1) External device asserts "Interrupt" with a signal on the interrupt line
+	2) CPU stops and enters a 'general interrupt service routine (ISR)
+	3) CPU disables interrupt bits
+	4) CPU sends an acknowledgement to the device
+	5) Device resets the interrupt line signal
+	6) CPU services "interrupt" with appropriate ISR
+	7) CPU re-enables Interrupt bits
+	8) CPU resumes computing
+	# WHAT ARE INTERRUPT VECTORS???
+		- starting address of ISR for every device allowed to interrupt
+		- Interrupt table contains all interrupt vectors
+
 			
 <br>
   ASSIGNMENTS
