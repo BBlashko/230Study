@@ -52,7 +52,6 @@
       Average access time from CPU =
         hit rate * cache access time + (1 - hit rate) * miss penalty
     
-    
 4) Linkers, Loaders, Compilers
 
     Loader
@@ -72,6 +71,7 @@
       
 5) Fetch, Decode, Execute  
     WHOLE CYCLE IS...
+	
 	FETCH STEP:
 		- Address in PC -> MAR
 		- MAR -> Address Bus
@@ -124,7 +124,37 @@
 		Speedup = 1 / (f + ((1-f)/P)) 
 			f = % of sequential instructions 
 			P = # of processors 
-   
+			
+8) I/O Basics
+				
+	Bus Basics
+	Bus inside a processor is called a 'datapath'
+	Busses can be...
+		- Asynchronous
+			- not clocked, good for variety of devices
+			- needs handshaking protocol
+		- Synchronous (Usually only for memory) 
+			- fixed handshake protocol relative to clock
+			- fast; little hardware
+			
+9) System Organization 
+
+	Computer Architecture 
+		- functional behaviour as viewed by programmer (ex. word size)
+	Computer Organization 
+		- Structural stuff not visible to programmer
+	Processor (CPU) includes...
+		- Control Unit
+		- Registers 
+		- ALU	
+	Bus Structures
+		Port I/O (Older, mainly Intel)
+			- Seperate buses for CPU -> Memory and CPU -> Peripherals 
+		Memory Mapped I/O
+			- Single bus between CPU and all other components
+			- Locations 'indexed' (ex. room 526 infers 5th floor)
+			
+			
 <br>
   ASSIGNMENTS
   
