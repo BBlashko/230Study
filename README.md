@@ -51,6 +51,20 @@
     # Disk Access Time = Rotation Time + Seek Time
       Average access time from CPU =
         hit rate * cache access time + (1 - hit rate) * miss penalty
+        
+    Associative Cache
+    	- A block is placed in *any* location in cache
+    	- reduces miss ratio
+    	- all entries in cache must be searched in parallel (hardware does it)
+    	- Most flexible, most expensive
+    Direct-Mapped Cache	
+        - (Block address)%(Number of cache blocks)
+        	- similar to hash table	
+    Another Design Concept: Split cache
+    	- One cache for Instructions (I cache)
+    	- Seperate cache for Data (D cache)
+    In general, average access time from CPU = ...
+    	= hitRate * cache access time + (1-hitRate)*missPenalty
     
 4) Linkers, Loaders, Compilers
 
