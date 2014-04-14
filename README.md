@@ -1,6 +1,9 @@
 230Study
 ========
 
+0) Logical shifts = Unsigned
+   Arithmetic shifts = Signed	
+	
 
 1) Performance (Clock Cycles etc...) 
 
@@ -9,6 +12,7 @@
     CPU time = (IC * CPI)/Clock rate
 	 or !!!
 	CPU time = (IC * CPI) * P(clock cycle time)
+    Performance = 1 / Execution Time		
     Multicore
     	- 2 CPUs, 1 cache, 1 MMU
     Multiprocessor
