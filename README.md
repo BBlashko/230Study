@@ -38,6 +38,11 @@
       - SLOW, LESS EXPENSIVE
       - MORE DENSE
       - needs refreshing when powered (every 16-64 ns)
+      
+    Volatile Memory
+      - Computer memory that requires power to retain its stored information.
+    Non-Volatile Memory 
+      - Computer memory that does not need power to retain its stored information.
     
 3) Cache 
 
@@ -132,6 +137,7 @@
 		Single Instruction Multiple Data (SIMD)
 			- Vector/Array processing 
 		Multiple Instruction Single Data (MISD) (useless?)
+							     |--> MISD is hardly used
 		Multiple Instruction Multiple Data (MIMD)	
    
 	Tight Coupling
@@ -194,8 +200,7 @@
 	# WHAT ARE INTERRUPT VECTORS???
 		- starting address of ISR for every device allowed to interrupt
 		- Interrupt table contains all interrupt vectors
-
-			
+	
 <br>
   ASSIGNMENTS
   
