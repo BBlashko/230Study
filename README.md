@@ -161,7 +161,13 @@
 		- Synchronous (Usually only for memory) 
 			- fixed handshake protocol relative to clock
 			- fast; little hardware
-			
+	Interfaces and Devices
+		- Brute Force
+		- Handshake
+	Processor and Interface
+		- Polling Driven
+		- Interrupt Driven
+
 9) System Organization 
 
 	Computer Architecture 
