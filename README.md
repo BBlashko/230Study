@@ -75,6 +75,7 @@
     	- Seperate cache for Data (D cache)
     In general, average access time from CPU = ...
     	= hitRate * cache access time + (1-hitRate)*missPenalty
+    Unit of data transfer for Cache is a 'SET' or 'BLOCK'
     
 4) Linkers, Loaders, Compilers
 
