@@ -66,7 +66,7 @@
       Average access time from CPU =
         hit rate * cache access time + (1 - hit rate) * miss penalty
         
-    Associative Cache
+    Associative Cache (ANYONE CAN PARK ANYWHERE)
     	- A block is placed in *any* location in cache
     	- reduces miss ratio
     	- all entries in cache must be searched in parallel (hardware does it)
