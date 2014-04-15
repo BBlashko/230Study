@@ -32,6 +32,33 @@
     Each program has its own page table
     ## Page valid in page tbl, entry+offset = physical page number in memory
     SLIDES 26-30 ON VIRTUAL TO UNDERSTAND PAGE#OFFSET
+    
+    Valid/Present bit determines if page is in Memory or MMU
+    	|--> if not Page Fault occurs
+    	
+    	Page Fault Design Challenges:
+    		- HUGE miss penalty
+    		- Reduce Page fault rate is important - > allow fully associative placement of pages
+    		- Reduce Overhead 
+    			|--> Overhead = any combination of excess or indirect computation time, memory, bandwidth, or 						other resources that are required to attain a particular goal
+    		- use writeback instead of write through ??
+    			
+    			|--> write through is too expensive. Dirty bit determines writeBack
+    			
+    TLB - Translation Lookaside Buffer
+    	|--> Cache for recent address translations:
+    		- can be fully Associative, set associative, direct mapped            **See 4) Cache for more info**
+    		- small ie. typically not more than 128 - 256 entries
+    		- access time is usually comparable with cache access time
+    		- resides in MMU
+    	- A TLB miss may not determine a true page fault (ie. only if page is not in memory)	
+    	
+    	Typical values for a TLB:
+    		miss rate = 0.01% - 1% (wow fucking low.)
+    		hit time = 0.5 - 1 clock cycles
+    		miss penalty = 10- 100 clock cycles
+    	implementation = hardware/software
+    		
 
 3) Memory
 
@@ -65,21 +92,56 @@
     # Disk Access Time = Rotation Time + Seek Time
       Average access time from CPU =
         hit rate * cache access time + (1 - hit rate) * miss penalty
-        
-    Associative Cache (ANYONE CAN PARK ANYWHERE)
-    	- A block is placed in *any* location in cache
-    	- reduces miss ratio
-    	- all entries in cache must be searched in parallel (hardware does it)
-    	- Most flexible, most expensive
-    Direct-Mapped Cache	
-        - (Block address)%(Number of cache blocks)
-        	- similar to hash table	
+   
+   Mapping Strategies:     
+    	Associative Cache (ANYONE CAN PARK ANYWHERE)
+    		- A block is placed in *any* location in cache
+    		- reduces miss ratio
+    		- all entries in cache must be searched in parallel (hardware does it)
+    		- Most flexible, most expensive
+    	Set Associative
+    		- Cache is divided into sets
+    		- block j goes into set j%(#sets)
+    			|--> then placed anywhere in set
+    		- tagging is needed
+    		-- find block is index + tag + offset
+	Direct-Mapped Cache	
+	        - (Block address)%(Number of cache blocks)
+	        	- similar to hash table	
+	 
     Another Design Concept: Split cache
     	- One cache for Instructions (I cache)
     	- Seperate cache for Data (D cache)
     In general, average access time from CPU = ...
     	= hitRate * cache access time + (1-hitRate)*missPenalty
     Unit of data transfer for Cache is a 'SET' or 'BLOCK'
+    
+    implementation = only hardware
+    
+    Cache Design Issues:
+    	**Need to know in detail**
+    	  - Size
+    	  	|--> if size is increased, miss rate is reduced but may increase access time
+    	  	|
+    	  - Mapping Function
+    	**Just definitions**
+    	  - Replacement Algorithms
+    	  	|--> LRU (Least Recently used), FIFO, random.
+    	  - Write Policy
+    	  - Block Size
+    	  - Number of Caches
+   	
+     Write Policies:
+     	|--> Write-Through protocol
+     		pros = cache and memory are updated at the same time
+     	             = simple
+     	             = memory is consistent when there are two CPUs
+     		cons = extra unneccessary writes
+     	|--> Write-Back protocol
+     		pros = Update memory later when cache block is removed
+     		cons = dirty bit is used to flag cache
+     		     = can write too much since it updates whole cache block
+     		     = complications if two CPUs access same block
     
 4) Linkers, Loaders, Compilers
 
